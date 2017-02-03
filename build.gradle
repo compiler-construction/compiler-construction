@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+
+group = 'dk.dtu.cs'
+version = '0.0.1'
+
+sourceCompatibility = 1.8 
+targetCompatibility = 1.8
+
+repositories {
+     maven { url "http://central.maven.org/maven2/" }
+}
+dependencies {
+	compile group: 'org.bytedeco.javacpp-presets', name: 'llvm', version: '3.8.0-1.2'
+}
+
+configurations {
+    all*.exclude group: 'org.bytedeco', module: 'javacpp-presets'
+}
